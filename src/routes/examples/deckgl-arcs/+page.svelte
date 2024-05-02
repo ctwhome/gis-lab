@@ -9,7 +9,7 @@
   import type { PageData } from "./$types";
   import type { FeatureCollection } from "geojson";
   import DeckGlLayer from "$lib/DeckGlLayer.svelte";
-  import { ArcLayer } from "@deck.gl/layers";
+  // import { ArcLayer } from "@deck.gl/layers";
   import Popup from "$lib/Popup.svelte";
   import FillLayer from "$lib/FillLayer.svelte";
   import GeoJson from "$lib/GeoJSON.svelte";
@@ -19,7 +19,7 @@
 
   function calculateArcs(fc: FeatureCollection) {
     let centers = new Map(
-      fc.features.map((f) => [f.properties.GEOID, geoCentroid(f)])
+      fc.features.map((f) => [f.properties.GEOID, geoCentroid(f)]),
     );
 
     let count = fc.features.length > 100 ? 5000 : 100;
@@ -104,7 +104,7 @@
     />
   </GeoJson>
 
-  <DeckGlLayer
+  <!-- <DeckGlLayer
     type={ArcLayer}
     data={arcs.filter((a, i) => {
       if (mode === "showAll") return i < 50000;
@@ -123,7 +123,7 @@
     <Popup openOn="click" let:data>
       From {data.fromName} to {data.toName}
     </Popup>
-  </DeckGlLayer>
+  </DeckGlLayer> -->
 </MapLibre>
 
 <h4>

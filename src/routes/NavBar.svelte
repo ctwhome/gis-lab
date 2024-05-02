@@ -1,29 +1,32 @@
 <script lang="ts">
-  import { beforeNavigate } from '$app/navigation';
-  import { page } from '$app/stores';
-  import { drawerStore } from '@skeletonlabs/skeleton';
-  import LogoAndMenu from './LogoAndMenu.svelte';
+  import { beforeNavigate } from "$app/navigation";
+  import { page } from "$app/stores";
+  import { drawerStore } from "@skeletonlabs/skeleton";
+  import LogoAndMenu from "./LogoAndMenu.svelte";
 
   export let inDrawer = false;
-  let classNames: string = '';
+  let classNames: string = "";
   export { classNames as class };
 
   const components = [];
   const examples = [
-    { href: '/examples/basic', title: `Plain Map` },
-    { href: '/examples/custom_marker', title: `Custom Marker` },
-    { href: '/examples/geojson_polygon', title: `GeoJSON Filled Polygon` },
-    { href: '/examples/geojson_line_layer', title: `Styled Line` },
-    { href: '/examples/heatmap', title: `Heatmap` },
-    { href: '/examples/controls', title: `Controls` },
-    { href: '/examples/clusters', title: `Clusters and Popups` },
-    { href: '/examples/custom_marker_clusters', title: `Custom Markers and Clusters` },
-    { href: '/examples/image_symbols', title: `Images in a Symbol Layer` },
-    { href: '/examples/marker_layer', title: `Layer Consisting of Markers` },
-    { href: '/examples/3d_buildings', title: `3D Buildings` },
-    { href: '/examples/geojson_extrusion', title: `GeoJSON Extrusion` },
-    { href: '/examples/zoom_transition', title: `Transition Layers with Zoom` },
-    { href: '/examples/deckgl-arcs', title: `Deck.gl Arc Layers` },
+    { href: "/examples/basic", title: `Plain Map` },
+    { href: "/examples/custom_marker", title: `Custom Marker` },
+    { href: "/examples/geojson_polygon", title: `GeoJSON Filled Polygon` },
+    { href: "/examples/geojson_line_layer", title: `Styled Line` },
+    { href: "/examples/heatmap", title: `Heatmap` },
+    { href: "/examples/controls", title: `Controls` },
+    { href: "/examples/clusters", title: `Clusters and Popups` },
+    {
+      href: "/examples/custom_marker_clusters",
+      title: `Custom Markers and Clusters`,
+    },
+    { href: "/examples/image_symbols", title: `Images in a Symbol Layer` },
+    { href: "/examples/marker_layer", title: `Layer Consisting of Markers` },
+    { href: "/examples/3d_buildings", title: `3D Buildings` },
+    { href: "/examples/geojson_extrusion", title: `GeoJSON Extrusion` },
+    { href: "/examples/zoom_transition", title: `Transition Layers with Zoom` },
+    // { href: '/examples/deckgl-arcs', title: `Deck.gl Arc Layers` },
   ];
 
   beforeNavigate(() => {
@@ -48,5 +51,7 @@
     {/each}
   </ul>
 
-  <p class="mt-4"><a target="_blank" href="https://github.com/ctwhome/ruisdael">Github</a></p>
+  <p class="mt-4">
+    <a target="_blank" href="https://github.com/ctwhome/ruisdael">Github</a>
+  </p>
 </div>
